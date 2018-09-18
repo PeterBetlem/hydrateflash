@@ -38,7 +38,8 @@ class Component(object):
                 c3h8=('c3h8', 'c_3h_8', 'c3', 'propane'),
                 co2=('co2', 'co_2', 'c02', 'c0_2', 'carbon dioxide',
                      'carbondioxide'),
-                n2=('n2', 'n_2', 'nitrogen'))
+                n2=('n2', 'n_2', 'nitrogen'),
+                nacl=('nacl','na_cl','sodium chloride')
              
     def __init__(self, name_of_comp):
         """Component properties to be used for each EOS
@@ -74,6 +75,8 @@ class Component(object):
             self.compname = 'co2'
         elif name_of_comp.lower() in self.menu['n2']:
             self.compname = 'n2'
+        elif name_of_comp.lower() in self.menu['nacl']:
+            self.compname= 'nacl'
         else:
             raise ValueError("""{0} + is not a supported component!!
                              \nConsult 'Component.menu'
